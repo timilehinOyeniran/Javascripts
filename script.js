@@ -175,3 +175,32 @@ else{
     console.log(`Wrong request!
 choose between first name, last name, age, job and friends.`)
 }
+console.log(`${person.firstname} has ${person.friends.length} friends, and his best friend is called ${person.friends[0]}` )
+
+const jonas={
+    'firstname':'Jonas',
+    'lastName': 'Schnieder',
+    'birthYear': 1993,
+    'job':'Teacher',
+    'friends':['Nike', 'Addidas', 'Reebok'],
+    //'calcAge': function () {return 2024 - this.birthYear},
+    'calcAge': function () {
+        this.age = 2024 - this.birthYear;
+        return this.age;
+    },
+    'hasDriversLicense': false,
+    'getDriversLicense': function(driversLicense){
+        this.hasDriversLicense = driversLicense
+        if(driversLicense = true){
+            return `he has a driver's license`
+        }
+        else if(driversLicense = false){
+            return `he has no driver's license`
+        }
+        }
+    }
+/**const birthYear = prompt(`What year were you born?`)
+console.log(jonas.calcAge(birthYear)) */
+
+console.log(`${jonas.calcAge()}`)
+console.log(`${jonas.firstname} is a ${jonas.calcAge()} year old teacher, and ${jonas.getDriversLicense()}`)
