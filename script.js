@@ -152,3 +152,26 @@ const calcTipss = function(bill){
 const tipps = [calcTipss(billss[0]), calcTipss(billss[1]), calcTipss(billss[2])]
 const totalss=[billss[0] + tipps[0], billss[1] + tipps[1] ,billss[2] + tipps[2]]
 console.log(bills, tipps, totalss)
+
+/** Object Literals syntaz */
+const person ={
+    'firstname':'Jonas',
+    'lastName': 'Schnieder',
+    'age': 2004 -1991,
+    'job':'Teacher',
+    'friends':['Nike', 'Addidas', 'Reebok']
+}
+console.log(person)
+
+const interestedIn = prompt(`what do you want to know about Jonas?
+choose between first name, last name, age, job and friends.`)
+console.log(interestedIn)
+console.log(person[interestedIn])
+
+if(person[interestedIn]){
+    console.log(person[interestedIn])
+}
+else{
+    console.log(`Wrong request!
+choose between first name, last name, age, job and friends.`)
+}
