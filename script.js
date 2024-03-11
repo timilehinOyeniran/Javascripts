@@ -87,7 +87,7 @@ const age2=calcAge(years[years.length-1])
 const ages3 = calcAge(years[1])
 console.log(age1, age2, ages3)
 
-const ages =[age1, age2, ages3]
+const ages =[]
 console.log(ages)
 
 /**Array Methods */
@@ -184,17 +184,16 @@ const jonas={
     'job':'Teacher',
     'friends':['Nike', 'Addidas', 'Reebok'],
     //'calcAge': function () {return 2024 - this.birthYear},
-    'calcAge': function () {
+    calcAge: function () {
         this.age = 2024 - this.birthYear;
         return this.age;
     },
-    'hasDriversLicense': false,
-    'getDriversLicense': function(driversLicense){
-        this.hasDriversLicense = driversLicense
-        if(driversLicense = true){
+    'hasDriversLicense': true,
+    getDriversLicense: function(){
+        if(this.hasDriversLicense ==true){
             return `he has a driver's license`
         }
-        else if(driversLicense = false){
+        else{
             return `he has no driver's license`
         }
         }
@@ -204,3 +203,67 @@ console.log(jonas.calcAge(birthYear)) */
 
 console.log(`${jonas.calcAge()}`)
 console.log(`${jonas.firstname} is a ${jonas.calcAge()} year old teacher, and ${jonas.getDriversLicense()}`)
+
+const mark = {
+    'fullName':'Mark Miller',
+    'mass':'78',
+    'height':'1.69',
+    //'bmi':'', There's is no need to declare an empty string, the this.bmi in the calcAge function introducing an new property bmi
+    calcBMI: function(){
+        this.bmi = this.mass/(this.height * 2)
+        return this.bmi;
+    }
+}
+   
+const john = {
+    'fullName':'John Smith',
+    'mass':'92',
+    'height':'1.95',
+    calcBMI: function(){
+        this.bmi = this.mass/(this.height * 2)
+        return this.bmi;
+    }
+}
+console.log(john.calcBMI(), mark.calcBMI())
+
+if(john.bmi > mark.bmi){
+ console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than Mark Miller's (${mark.bmi})!`)   
+}
+else{
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than John Smith's (${john.bmi})!`)
+}
+
+/** For loops */
+
+for (let rep = 1; rep <= 10; rep++){
+    console.log(`Lifting weights repitition 💪🏿 ${rep}`)
+}
+
+const jonah =[
+    'jonah',
+    'John',
+    2024-1987,
+    'teacher',
+    ['mark', 'blake', 'sullivan']
+]
+const types =[]
+for( let i =0; i < jonah.length; i++){
+    types.push(typeof jonah[i])
+    if( typeof jonah[i] !=='string') continue;
+    console.log(jonah[i], typeof(jonah[i]))
+}
+console.log(types)
+
+for(let i = 0; i< years.length; i++){
+    ages.push(2024 - years[i])
+}
+console.log(ages)
+
+for(let i=jonah.length-1; i >=0; i--){
+   console.log(`-----Testing Backward Loop ${jonah[i]}`)
+
+   for(let exercise = 1; exercise <=5; exercise++){
+    console.log(`Lifting weights repitition 💪🏿 ${exercise}`)
+   }
+}
+
