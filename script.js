@@ -267,3 +267,32 @@ for(let i=jonah.length-1; i >=0; i--){
    }
 }
 
+let dice = Math.trunc(Math.random()*6)+1
+console.log(dice)
+
+while(dice !== 6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random()*6)+1;
+    if (dice ===6)
+        console.log(`Your olled ${dice}, loop is about to end ....`)
+
+}
+
+const bils = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+const tiips =[]
+const totaals =[]
+
+for (let i=0; i<bils.length; i++){
+    tips.push(calcTip(bils[i]))
+    totals.push(bils[i] + (calcTip(bils[i])))
+}
+console.log(bils, tiips, totaals)
+
+function calcAvrage(arr){
+    let sum =0;
+    for(let i = 0; i< arr.length; i++){
+        sum = sum + arr[i]
+    }
+    return sum / arr.length;
+}
+console.log(calcAvrage(totaals))
